@@ -14,10 +14,16 @@ Provides both setter and getter methods for the given column name
 Takes query parameters (in the form "col_name: value") and returns a Relation object, which allows for chaining of #where calls. The Relation is executed when another, non-chainable method is called on it.
 
 ### SQLBase::table_name
+Returns the table name for the associated model
 ### SQLBase::all
+Returns all instances of that model
 ### SQLBase::columns
+Returns all the column names associated with that model
 ### SQLBase::find
+Takes an id as a parameter and returns the first entry in the database of that model with the given id
 ### SQLBase#attributes && #attribute_values
+Return the names and values, respectively, of the attributes of the given model
 ### SQLBase#insert
+Adds the model to the database
 ### SQLBase#update
-### SQLBase#save
+Updates the entries in the database associated with the given model with its current attribute values
