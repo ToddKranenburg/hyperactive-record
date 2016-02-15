@@ -3,8 +3,8 @@ require 'sqlite3'
 PRINT_QUERIES = ENV['PRINT_QUERIES'] == 'true'
 # https://tomafro.net/2010/01/tip-relative-paths-with-file-expand-path
 ROOT_FOLDER = File.join(File.dirname(__FILE__), '..')
-HYPERACTIVE_SQL_FILE = File.join(ROOT_FOLDER, 'hyperactive.sql')
-HYPERACTIVE_DB_FILE = File.join(ROOT_FOLDER, 'hyperactive.db')
+PLANTS_SQL_FILE = File.join(ROOT_FOLDER, 'plants.sql')
+PLANTS_DB_FILE = File.join(ROOT_FOLDER, 'plants.db')
 
 class DBConnection
   def self.open(db_file_name)
@@ -17,12 +17,11 @@ class DBConnection
 
   def self.reset
     commands = [
-      "rm '#{HYPERACTIVE_DB_FILE}'",
-      "hyperactive '#{HYPERACTIVE_SQL_FILE}' | sqlite3 '#{HYPERACTIVE_DB_FILE}'"
+      "rm '#{PLANTS_DB_FILE}'",
+      "cat '#{PLANTS_SQL_FILE}' | sqlite3 '#{PLANTS_DB_FILE}'"
     ]
-
     commands.each { |command| `#{command}` }
-    DBConnection.open(HYPERACTIVE_DB_FILE)
+    DBConnection.open(PLANTS_DB_FILE)
   end
 
   def self.instance
@@ -35,7 +34,7 @@ class DBConnection
     print_query(*args)
     instance.execute(*args)
   end
-  
+
   def self.execute2(*args)
     print_query(*args)
     instance.execute2(*args)

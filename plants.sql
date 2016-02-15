@@ -34,7 +34,7 @@ VALUES
   (4, "Hendrik", "Johannes", NULL);
 
 INSERT INTO
-  cats (id, name, owner_id)
+  plants (id, name, owner_id)
 VALUES
   (1, "Thirsty", 1),
   (2, "Leafy", 2),
