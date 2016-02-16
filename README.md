@@ -27,3 +27,5 @@ Return the names and values, respectively, of the attributes of the given model
 Adds the model to the database
 ### SQLBase#update
 Updates the entries in the database associated with the given model with its current attribute values
+### Validator::validates
+Takes column names and options for validating presence and length
