@@ -1,9 +1,28 @@
 require_relative "searchable"
-require_relative "attr"
 require 'active_support/inflector'
 
-class AssocOptions < AttrObject
-  my_attr_accessor :foreign_key, :class_name, :primary_key
+class AssocOptions
+  def foreign_key
+    @foreign_key
+  end
+
+  def foreign_key=(val)
+    @foreign_key = val
+  end
+  def class_name
+    @class_name
+  end
+
+  def class_name=(val)
+    @class_name = val
+  end
+  def primary_key
+    @primary_key
+  end
+
+  def primary_key=(val)
+    @primary_key = val
+  end
 
   def model_class
     class_name.constantize

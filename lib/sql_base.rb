@@ -1,8 +1,7 @@
 require_relative 'db_connection'
-require_relative 'attr'
 require 'active_support/inflector'
 
-class SQLBase < AttrObject
+class SQLBase
   def self.table_name
     @table_name ||= self.to_s.tableize
   end

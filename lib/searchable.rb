@@ -12,9 +12,11 @@ module Searchable
 end
 
 class Relation
+
   def where_line
     @where_line
   end
+
   def initialize(where_line, super_class)
     @where_line = where_line
     @table_name = super_class.constantize.table_name
@@ -32,7 +34,11 @@ class Relation
   def method_missing(name, *args)
     execute_relation.send(name, *args)
   end
-  
+
+  def ==(val)
+    execute_relation ==(val)
+  end
+
   private
   def execute_relation
     results = DBConnection.execute(<<-SQL)
