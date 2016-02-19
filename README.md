@@ -1,5 +1,9 @@
 # HyperactiveRecord
-HyperactiveRecord is a library that implements much of the same functionality as active record: it serves as an intermediary between a model in an MVC framework and the database with which that model is associated with. HyperactiveRecord was built to work specifically with Sqlite3, but could be extrapolated to work with any relational database.
+HyperactiveRecord is a tool designed for object-relational mapping similar to Rails's Active Record. A SQLBase object in HyperactiveRecord is associated with a table in a given database (more on how to associate a database below) and includes a number of appropriate getter and setter methods for that table.
+
+## Setting Up A Database
+This repository includes a SQLite3 database called Plants and a file (lib/db_connection.rb) to associate that database with the project. To include HyperactiveRecord in your project, simply include the library in your project directory, initialize a SQL database in your project, and modify the db_connection.rb file with the name of your .db file (replacing 'plants.db').
+
 
 ## Methods
 
