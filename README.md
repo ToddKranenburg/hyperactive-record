@@ -20,4 +20,4 @@ This repository includes a SQLite3 database called Plants and a file (lib/db_con
 * `#validates`: Takes column names and options for validating presence and length
 * `#has_many`: Takes a table name and optional `class_name`, `foreign_key`, and `primary_key` values and associates the SQLBase object with the given table in a "has many" relationship.
 * `#belongs_to`: Takes a table `name` and optional `class_name`, `foreign_key`, and `primary_key` values and associates the SQLBase object with the given table in a "belongs to" relationship.
-* `#has_many_through`: Takes a table `name`, a `through_name`, and a `source_name` and associates the given SQLBase object with the table given by `name` through a previously associated table (given by `through_name`), which has an association with the desired table (`source_name`).
+* `#has_many_through` and `has_one_through`: Takes a table `name`, a `through_name`, and a `source_name` and associates the given SQLBase object with the table given by `name` through a previously associated table (given by `through_name`), which has an association with the desired table (`source_name`).
